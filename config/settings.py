@@ -63,12 +63,13 @@ WSGI_APPLICATION = 'config.wsgi.application'
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
 
 DATABASES = {
+
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': config('DATABASE_NAME'),
-        'USER': config('DATABASE_USER'),
-        'PASSWORD': config('DATABASE_PASS'),
-        'HOST': config('DATABASE_HOST'),
+        'NAME': config('DATABASE_NAME', default='auctions'),
+        'USER': config('DATABASE_USER', default='aris'),
+        'PASSWORD': config('DATABASE_PASS', default='aris1985'),
+        'HOST': config('DATABASE_HOST', default='localhost'),
         'PORT': '', # leave blank so the default port is selected
     }
 }
